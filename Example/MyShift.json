@@ -1,0 +1,1133 @@
+{
+  "pagination": {
+      "perPage": 100,
+      "page": -1,
+      "totalPages": 1,
+      "totalItems": 16
+  },
+  "schedule": [
+      {
+          "id": 680418564,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-23 11:00:00",
+          "endDate": "2022-08-23 16:00:00",
+          "categoryName": "NEO - Drift",
+          "categoryId": 370766,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967345,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-24 06:45:00",
+          "endDate": "2022-08-24 16:00:00",
+          "categoryName": "NEO - Dagchef",
+          "categoryId": 370737,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-24 11:08:00",
+                  "end": "2022-08-24 11:38:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54864925,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "06:45:00",
+                  "end": "07:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54864926,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967483,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-25 06:45:00",
+          "endDate": "2022-08-25 16:00:00",
+          "categoryName": "NEO - Dagchef",
+          "categoryId": 370737,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-25 11:08:00",
+                  "end": "2022-08-25 11:38:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54865083,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "06:45:00",
+                  "end": "07:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54865084,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967490,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-26 06:00:00",
+          "endDate": "2022-08-26 14:00:00",
+          "categoryName": "NEO - Rengöring",
+          "categoryId": 370760,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-26 10:45:00",
+                  "end": "2022-08-26 11:15:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54865093,
+                  "shiftTypeId": 370766,
+                  "name": "NEO - Drift",
+                  "description": "",
+                  "start": "09:00:00",
+                  "end": "14:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967354,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-29 11:00:00",
+          "endDate": "2022-08-29 20:00:00",
+          "categoryName": "NEO - Eftermiddagschef",
+          "categoryId": 370738,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-29 15:15:00",
+                  "end": "2022-08-29 15:45:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54864937,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "19:45:00",
+                  "end": "20:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54864938,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 680395069,
+          "type": 1,
+          "status": 0,
+          "startDate": "2022-08-29 14:00:00",
+          "endDate": "2022-08-29 18:00:00",
+          "categoryName": "NEO - Leverans",
+          "categoryId": 370757,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": null,
+          "agreement": null,
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678968018,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-30 11:00:00",
+          "endDate": "2022-08-30 20:00:00",
+          "categoryName": "NEO - Eftermiddagschef",
+          "categoryId": 370738,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-30 15:15:00",
+                  "end": "2022-08-30 15:45:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54865202,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54865203,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "19:45:00",
+                  "end": "20:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 681135105,
+          "type": 1,
+          "status": 0,
+          "startDate": "2022-08-30 11:00:00",
+          "endDate": "2022-08-30 20:00:00",
+          "categoryName": "NEO - Drift",
+          "categoryId": 370766,
+          "description": "",
+          "grabbAble": true,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-30 15:15:00",
+                  "end": "2022-08-30 15:45:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": null,
+          "agreement": null,
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 681251043,
+          "type": 1,
+          "status": 0,
+          "startDate": "2022-08-31 09:00:00",
+          "endDate": "2022-08-31 14:00:00",
+          "categoryName": "NEO - Drift",
+          "categoryId": 370766,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": null,
+          "agreement": null,
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967371,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-08-31 13:30:00",
+          "endDate": "2022-08-31 21:00:00",
+          "categoryName": "NEO - Leverans",
+          "categoryId": 370757,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-08-31 16:00:00",
+                  "end": "2022-08-31 16:30:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54864949,
+                  "shiftTypeId": 370766,
+                  "name": "NEO - Drift",
+                  "description": "",
+                  "start": "16:30:00",
+                  "end": "21:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967267,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-09-01 06:45:00",
+          "endDate": "2022-09-01 16:00:00",
+          "categoryName": "NEO - Dagchef",
+          "categoryId": 370737,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-09-01 11:08:00",
+                  "end": "2022-09-01 11:38:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54864824,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "06:45:00",
+                  "end": "07:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54864825,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 681136081,
+          "type": 1,
+          "status": 0,
+          "startDate": "2022-09-01 11:00:00",
+          "endDate": "2022-09-01 20:00:00",
+          "categoryName": "NEO - Drift",
+          "categoryId": 370766,
+          "description": "",
+          "grabbAble": true,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-09-01 15:15:00",
+                  "end": "2022-09-01 15:45:00"
+              }
+          ],
+          "isBookedByMe": true,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": null,
+          "agreement": null,
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 679961006,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-09-02 07:15:00",
+          "endDate": "2022-09-02 16:00:00",
+          "categoryName": "NEO - Öppning",
+          "categoryId": 370758,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-09-02 10:23:00",
+                  "end": "2022-09-02 10:53:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 55166562,
+                  "shiftTypeId": 370766,
+                  "name": "NEO - Drift",
+                  "description": "",
+                  "start": "09:00:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967505,
+          "type": 1,
+          "status": 0,
+          "startDate": "2022-09-02 13:30:00",
+          "endDate": "2022-09-02 21:00:00",
+          "categoryName": "NEO - Leverans",
+          "categoryId": 370757,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-09-02 16:00:00",
+                  "end": "2022-09-02 16:30:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": null,
+          "agreement": null,
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 55166573,
+                  "shiftTypeId": 370766,
+                  "name": "NEO - Drift",
+                  "description": "",
+                  "start": "16:30:00",
+                  "end": "21:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967450,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-09-03 11:00:00",
+          "endDate": "2022-09-03 20:00:00",
+          "categoryName": "NEO - Eftermiddagschef",
+          "categoryId": 370738,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-09-03 15:15:00",
+                  "end": "2022-09-03 15:45:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54865044,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54865045,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "19:45:00",
+                  "end": "20:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      },
+      {
+          "id": 678967383,
+          "type": 0,
+          "status": 1,
+          "startDate": "2022-09-04 11:00:00",
+          "endDate": "2022-09-04 20:00:00",
+          "categoryName": "NEO - Eftermiddagschef",
+          "categoryId": 370738,
+          "description": "",
+          "grabbAble": false,
+          "freeDay": false,
+          "breakType": 0,
+          "breaks": [
+              {
+                  "start": "2022-09-04 15:15:00",
+                  "end": "2022-09-04 15:45:00"
+              }
+          ],
+          "isBookedByMe": false,
+          "isPartOfMySwapRequest": false,
+          "isPartOfSwap": false,
+          "crmScheduleId": 0,
+          "categoryDecisionTypeIds": [],
+          "unit": {
+              "id": 56006,
+              "name": "Sthlm 27 – Sköndal",
+              "districtId": 7425,
+              "noBreaks": 2,
+              "anonymousShifts": 0,
+              "allowSwap": false,
+              "requirePunchOutInsideGeofence": true,
+              "coordinates": []
+          },
+          "section": null,
+          "employee": {
+              "id": 1752979,
+              "givenName": "Jawad",
+              "familyName": "Nozari",
+              "pictureURL": "https://assets-public-prod-eu-central-1.quinyx.com/img/no_picture_male.jpg",
+              "sectionId": null,
+              "districtId": null,
+              "unitId": 56006
+          },
+          "agreement": {
+              "id": 4310316,
+              "name": "HRF",
+              "employeeId": 1752979,
+              "weekStart": 1,
+              "dayBreakRest": "06:00:00",
+              "minimumAvailabilityHoursPerWeek": 0,
+              "isMainAgreement": false
+          },
+          "crmOrder": null,
+          "crmCustomer": null,
+          "tasks": [
+              {
+                  "id": 54864961,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "15:45:00",
+                  "end": "16:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              },
+              {
+                  "id": 54864962,
+                  "shiftTypeId": 370747,
+                  "name": "NEO - Administration",
+                  "description": "",
+                  "start": "19:45:00",
+                  "end": "20:00:00",
+                  "done": false,
+                  "punches": [],
+                  "tags": []
+              }
+          ],
+          "tags": null,
+          "costCentre": {
+              "id": 146857,
+              "ttext": "Sthlm - 27 Sköndal - 153",
+              "restId": 39083
+          },
+          "project": null
+      }
+  ],
+  "collapsedShifts": []
+}

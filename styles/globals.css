@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .striped tr:nth-child(even) {
+    /* @apply bg-gray-100; */
+  }
+}
