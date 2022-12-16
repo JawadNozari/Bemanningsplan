@@ -20,12 +20,10 @@ const Home: NextPage = (data) => {
   );
 };
 
-
 Home.getInitialProps = async () => {
-
   const body = {
-    userName: process.env.QUSERNAME,
-    password: process.env.QPASSWORD,
+    userName: process.env.VRMUSERNAME,
+    password: process.env.VRMPASSWORD,
   };
   const config = {
     url: `http://localhost:${process.env.PORT}/api/getCredential`,

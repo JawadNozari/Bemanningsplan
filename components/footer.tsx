@@ -13,10 +13,10 @@ const day = new Date().toLocaleDateString("en-US", { weekday: "long" });
 function Footer() {
   return (
     <>
-      <div>
+      <div className="max-w-[793px]">
         <div className="flex flex-col">
           <table className="mt-3">
-            <thead className="bg-gray-100 ">
+            <thead className="bg-gray-300 ">
               <tr className="grid grid-cols-8">
                 <th className="border border-r-0 border-slate-700 py-2 col-span-1 border-b-0">
                   Antal Kvitton
@@ -71,18 +71,6 @@ function Footer() {
                     {" / BBQ Plant Beef"}
                   </div>
                 </span>
-                {/* <span className="block text-left font-bold border-b-2 border-slate-900">
-                Dagens vegetarisk
-              </span>
-              <span className="block text-left pt-1 ">
-                <div
-                  className="focus:outline-none"
-                  contentEditable={true}
-                  suppressContentEditableWarning={true}
-                >
-                  {"BBQ Plant Beef"}
-                </div>
-              </span> */}
               </div>
             </div>
             <div className="flex flex-col">

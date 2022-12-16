@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .striped tr:nth-child(even) {
-    /* @apply bg-gray-100; */
+  .font_Mulish {
+    @apply font-Mulish !important;
   }
 }

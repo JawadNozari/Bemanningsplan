@@ -37,7 +37,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-/components/samples/
-
 /secret
-/Pages/api/getCredential.ts
