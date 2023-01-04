@@ -13,10 +13,10 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   let date = new Date().toLocaleString("sv-SE", { timeZone: "Europe/Stockholm" }).split(" ");
-  let startDate = date[0];
-  let endDate = new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleString("sv-SE", { timeZone: "Europe/Stockholm" }).split(" ")[0];
 
+  const line = "-".repeat(100);
   if (req.body.userName != null && req.body.password != null) {
+    console.log(req.body);
     //TODO This Part shoud done on client side before sending request to API
     let AuthUrl = "";
     let Response = "";
@@ -29,6 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       UserName: `${req.body.userName}@max.se`,
     });
     const client = wrapper(axios.create({ jar }));
+
     // Get SAML url from max Domain for Authentication
     const url = await client
       .get("https://schema.max.se")
@@ -76,6 +77,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const user = await client
           .get("https://web.quinyx.com/extapi/authenticated")
           .then((res) => {
+           
             let authenticatedUser = `${res.data.firstname} ${res.data.lastname}`;
             return authenticatedUser;
           })
@@ -97,44 +99,29 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             errorLog(err);
             return;
           });
-        let schedule = `https://web.quinyx.com/extapi/v1/schedule/shifts/by-group/${group.id}?endDate=${endDate}T06:00:00&startDate=${startDate}T06:00:00`;
-        let forecast = `https://web.quinyx.com/extapi/v1/forecast-calculation/groups/${group.id}/forecast-data?end=${endDate}T05:00:00&start=${startDate}T08:00:00&variableIds=395&variableIds=397`;
-        let shifts = await client
-          .get(schedule)
-          .then((resp) => {
-            return resp.data;
-          })
-          .catch((err) => {
-            errorLog(err);
-            return [];
-          });
-        let forecastData = await client
-          .get(forecast)
-          .then((resp) => {
-            return resp.data;
-          })
-          .catch((err) => {
-            errorLog(err);
-            return [];
-          });
+
+        //TODO Send SESSIONID AS RESPONSE
+        //----------------------------------------------------------------------
+        let sessionID = jar.toJSON().cookies.filter((cookie) => {
+          return cookie.key == "SESSIONID" && cookie.domain == "web.quinyx.com";
+        });
+        //----------------------------------------------------------------------
 
         user == undefined
           ? errorLog({ code: 401, message: "User is not authenticated" })
           : messageLog(`Responded Successfully to \x1b[32m${user}\x1b[0m from Restaurang \x1b[33m${group.name}\x1b[0m`);
 
-        res.status(200).send({ shifts: shifts, forecastdata: forecastData });
+        res.status(200).send(sessionID);
         return;
       }
     }
   }
-  const line = "-".repeat(100);
+
   function errorLog(err: { code: any; message: string }) {
-    console.debug(
-      `${line}\n\n[ \x1b[36m${date[0]} - ${date[1]}\x1b[0m ] Error ${err.code ? err.code : ""}:\x1b[31m ${err.message}\x1b[0m\n\n${line}`
-    );
+    console.debug(`${line}\n[ \x1b[36m${date[0]} - ${date[1]}\x1b[0m ] Error ${err.code ? err.code : ""}:\x1b[31m ${err.message}\x1b[0m`);
   }
   function messageLog(message: string) {
-    console.debug(`${line}\n\n[ \x1b[36m${date[0]} - ${date[1]}\x1b[0m ] ${message}\n\n${line}`);
+    console.debug(`${line}\n[ \x1b[36m${date[0]} - ${date[1]}\x1b[0m ] ${message}`);
   }
   res.status(400).send("Credentials were not provided");
   return;

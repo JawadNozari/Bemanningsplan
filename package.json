@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3200",
+    "dev": "next dev --port 3301",
     "build": "next build",
     "start": "next start --port 3200",
     "lint": "next lint"
@@ -11,6 +11,7 @@
     "@react-oauth/google": "^0.2.6",
     "@types/qs": "^6.9.7",
     "@types/tough-cookie": "^4.0.2",
+    "@vespaiach/axios-fetch-adapter": "^0.3.1",
     "axios": "^0.27.2",
     "axios-cookiejar-support": "^4.0.3",
     "cheerio": "^1.0.0-rc.12",

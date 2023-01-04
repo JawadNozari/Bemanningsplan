@@ -1,8 +1,10 @@
+//TODO Check if session id is valid then continue
+//TODO Use RouteGaurd and insure that SESSIONID is valid
+
 import Head from "next/head";
 import type { NextPage } from "next";
 import Table from "../components/table";
 import axios from "axios";
-import Bemanningsplan from "./bemanningsplan";
 
 const Home: NextPage = (data) => {
   return (
@@ -12,38 +14,73 @@ const Home: NextPage = (data) => {
       </Head>
       <main>
         <div>
-          {/* <Bemanningsplan /> */}
-          <Table BData={data} />
+          <Table data={data} />
         </div>
       </main>
     </div>
   );
 };
 
+export async function getServerSideProps({ req, res }: { req: any; res: any }) {
+  let date = new Date().toLocaleString("sv-SE", { timeZone: "Europe/Stockholm" }).split(" ");
+  let startDate = date[0];
+  let endDate = new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleString("sv-SE", { timeZone: "Europe/Stockholm" }).split(" ")[0];
 
-Home.getInitialProps = async () => {
+  const getData = (url: string) => {
+    let response = axios
+      .request({
+        url: url,
+        method: "get",
+        headers: {
+          Cookie: `SESSIONID=${req.cookies.SESSIONID}`,
+        },
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        return { Code: 401, message: "unauthorized" };
+      });
+    return response;
+  };
 
-  const body = {
-    userName: process.env.QUSERNAME,
-    password: process.env.QPASSWORD,
-  };
-  const config = {
-    url: `http://localhost:${process.env.PORT}/api/getCredential`,
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: JSON.stringify(body),
-  };
-  const data = await axios(config)
-    .then((res) => {
-      return res.data;
+  let group = await getData("https://web.quinyx.com/extapi/v1/organisation/groups?")
+    .then((result) => {
+      if (result.Code == 401) return {id:0};
+      return result
+        .reduce((prev: any, next: any) => prev.concat(next.hasAccess), [])
+        .reduce((prev: any, next: any) => prev.concat(next.hasAccess), [])
+        .filter((x: any) => x.defaultGroup == true)[0];
     })
     .catch((err) => {
-      return err.message;
+      console.log(err);
+      return err;
     });
 
-  return { data };
-};
+  let schedule = `https://web.quinyx.com/extapi/v1/schedule/shifts/by-group/${group.id}?endDate=${endDate}T06:00:00&startDate=${startDate}T06:00:00`;
+  let forecast = `https://web.quinyx.com/extapi/v1/forecast-calculation/groups/${group.id}/forecast-data?end=${endDate}T05:00:00&start=${startDate}T08:00:00&variableIds=395&variableIds=397`;
+
+  let scheduleData = await getData(schedule)
+    .then((response) => {
+      if (response.Code == 401) {
+        return {};
+      }
+      return response;
+    })
+    .catch((err) => {
+      return {};
+    });
+  let forecastData = await getData(forecast)
+    .then((response) => {
+      if (response.Code == 401) {
+        return {};
+      }
+      return response;
+    })
+    .catch((err) => {
+      return {};
+    });
+  return { props: { shifts: scheduleData, forecast: forecastData } };
+}
 
 export default Home;

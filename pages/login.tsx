@@ -2,15 +2,15 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
-import Bemanningsplan from "./bemanningsplan";
+import Cookies from "js-cookie";
+import Router from "next/router";
+
 const Login: NextPage = () => {
   //TODO: change useState to something Efficient
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
-  const router = useRouter();
   async function handleSubmit(event: any) {
     event.preventDefault();
 
@@ -30,6 +30,8 @@ const Login: NextPage = () => {
     let response = await axios(config)
       .then((res) => {
         setError(false);
+        Cookies.set("SESSIONID", res.data[0].value, { expires: 1 / 24 });
+        Router.replace("/");
         return { data: res.data, success: res.status == 200 ? true : false };
       })
       .catch((err) => {
@@ -37,6 +39,7 @@ const Login: NextPage = () => {
         setError(true);
         return err;
       });
+
     return response;
   }
 
