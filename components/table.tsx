@@ -38,8 +38,7 @@ function Table(props: any) {
             className="inline-block px-16 py-3 bg-[#e41f18] border-white text-white font-medium text-lg leading-snug uppercase rounded-full"
             onClick={redirect}
           >
-            {" "}
-            Login{" "}
+            Login
           </button>
         </div>
       </div>
@@ -150,7 +149,7 @@ function Table(props: any) {
                         </tr>
                       );
                     })}
-                    <EmptyRow quantity={6} />
+                    <>{schedules.length <= 29 ? <EmptyRow quantity={4} /> : ""}</>
                   </tbody>
                 </table>
               </div>
