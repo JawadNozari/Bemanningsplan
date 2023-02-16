@@ -1,10 +1,11 @@
 import axios from "axios";
 import Image from "next/image";
-import { useState } from "react";
 import { NextPage } from "next";
 import Cookies from "js-cookie";
+import { useState } from "react";
 import Router from "next/router";
 import Loader from "../components/Loader";
+import { formatDate } from "../components/formatDate";
 
 const Login: NextPage = () => {
   //TODO: change useState to something Efficient
@@ -33,12 +34,15 @@ const Login: NextPage = () => {
     let response = await axios(config)
       .then((res) => {
         setError(false);
+        let query = formatDate(new Date().toString());
         Cookies.set("SESSIONID", res.data[0].value, { expires: 1 / 24 });
-        Router.replace("/");
+        Router.push({
+          pathname: "/",
+          query: query,
+        });
         return { data: res.data, success: res.status == 200 ? true : false };
       })
       .catch((err) => {
-        console.log(err);
         setMessage(err.response.data);
         setError(true);
         setLoading(false);

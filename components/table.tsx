@@ -1,34 +1,37 @@
+import "dayjs/locale/sv";
 import cn from "classnames";
 import Footer from "./footer";
-import SalesChart from "./salesChart";
-import EmptyRow from "./emptyRow";
+import Image from "next/image";
 import Router from "next/router";
+import { useState } from "react";
+import EmptyRow from "./emptyRow";
+import SalesChart from "./salesChart";
+import TextField from "@mui/material/TextField";
+import { formatDate } from "../components/formatDate";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-type shiftinf = {
-  worker: {
-    firstname: string;
-    lastname: string;
-  };
-  begin: string;
-  end: string;
-  status: string;
-  breaks: Array<object>;
-  shiftTypeId: number;
-};
-
-function Table(props: any) {
+function Table({ data }: any) {
+  const [date, setValue] = useState<Date | null>(new Date());
+  const [dateModified, setDateModified] = useState(false);
   function getDate() {
-    const date = new Date();
-    const weekDay = date.toLocaleDateString("sv-SE", { weekday: "long" });
-    return `${weekDay.charAt(0).toLocaleUpperCase()}${weekDay.slice(1)} ${date.toISOString().split("T")[0]}`;
+    const d = new Date(date!.toString());
+    const weekDay = d.toLocaleDateString("sv-SE", { weekday: "long" });
+    return `${weekDay.charAt(0).toLocaleUpperCase()}${weekDay.slice(1)} ${d.toISOString().split("T")[0]}`;
   }
-  let shifts = props.data.shifts;
-  let forecast = props.data.forecast;
-
+  if (dateModified) {
+    Router.push({
+      pathname: "/",
+      query: formatDate(date!.toString()),
+    });
+    setDateModified(false);
+  }
+  let scheduleData = data.BemanningsData.scheduleData;
+  let forecastData = data.BemanningsData.forecastData;
   const redirect = () => {
     Router.push("/login");
   };
-  if (Object.keys(shifts).length === 0 || props == null) {
+  if (Object.keys(scheduleData).length === 0 || data == null) {
     return (
       <div className="flex justify-center items-center h-screen font-bold flex-col ">
         <div className="border-red-600">
@@ -44,7 +47,7 @@ function Table(props: any) {
       </div>
     );
   }
-  let schedules = shifts.sort((a: any, b: any) => (a.begin > b.begin ? 1 : -1));
+  let schedules = scheduleData.sort((a: any, b: any) => (a.begin > b.begin ? 1 : -1));
   const headers = [
     { key: "workingHours", label: "Tid" },
     { key: "name", label: "Namn" },
@@ -55,16 +58,48 @@ function Table(props: any) {
     { key: "receiptNumber", label: "Nota" },
     { key: "amount", label: "Summa" },
   ];
-
+  const handlePrint = () => {
+    window.print();
+  };
   return (
     <>
       {schedules.length > 0 ? (
         <div className="text-xs text-center font-Mulish ml-12 my-8 print:my-0">
           <div className="block header">
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <span className="flex text-xl">BEMANNINGSPLAN</span>
               <span className="flex items-center font-bold text-sm">
-                <>{getDate()}</>
+                <>
+                  <div className="hidden print:flex">
+                    <>{getDate()}</>
+                  </div>
+
+                  <div className="print:hidden animate-pulsee">
+                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="sv">
+                      <DatePicker
+                        label="välj ett datum"
+                        value={date}
+                        onChange={(newValue) => {
+                          setValue(newValue);
+                        }}
+                        onClose={() => {
+                          setDateModified(true);
+                        }}
+                        renderInput={(params) => {
+                          return <TextField {...params} />;
+                        }}
+                      />
+                    </LocalizationProvider>
+                  </div>
+
+                  <button
+                    className="print:hidden flex justify-center items-center border bg-slate-700 text-white border-gray-900 rounded-md px-4 py-2 ml-5"
+                    onClick={handlePrint}
+                  >
+                    <Image src="/assets/printer.svg" alt="printer" width={25} height={25} />
+                    <p className="pl-2">Print</p>
+                  </button>
+                </>
               </span>
             </div>
             <span className="flex place-content-start">version 2.2</span>
@@ -85,12 +120,12 @@ function Table(props: any) {
                     </tr>
                   </thead>
                   <tbody>
-                    {schedules.map((shift: shiftinf, i: number) => {
+                    {schedules.map((scheduleData: shiftinf, i: number) => {
                       return (
                         <tr key={i} className="border border-slate-700">
                           <td className="py-[0.5em]  px-2 whitespace-nowrap">
                             <div className="focus:outline-none" contentEditable={true} suppressContentEditableWarning={true}>
-                              {shift.begin.split("T")[1].slice(0, -3)} - {shift.end.split("T")[1].slice(0, -3)}
+                              {scheduleData.begin.split("T")[1].slice(0, -3)} - {scheduleData.end.split("T")[1].slice(0, -3)}
                             </div>
                           </td>
                           <td className="border border-slate-700 min-w-[10em]">
@@ -99,13 +134,13 @@ function Table(props: any) {
                               suppressContentEditableWarning={true}
                               className={cn("px-1 focus:outline-none", {
                                 "uppercase font-bold":
-                                  shift.shiftTypeId == 370737 ||
-                                  shift.shiftTypeId == 370738 ||
-                                  shift.shiftTypeId == 370739 ||
-                                  shift.shiftTypeId == 370740,
+                                  scheduleData.shiftTypeId == 370737 ||
+                                  scheduleData.shiftTypeId == 370738 ||
+                                  scheduleData.shiftTypeId == 370739 ||
+                                  scheduleData.shiftTypeId == 370740,
                               })}
                             >
-                              {shift.status == "UNASSIGNED" ? "" : shift.worker.firstname}
+                              {scheduleData.status == "UNASSIGNED" ? "" : scheduleData.worker.firstname}
                             </div>
                           </td>
                           <td className="border border-slate-700 px-1 min-w-[10em]">
@@ -116,28 +151,28 @@ function Table(props: any) {
                           </td>
                           <td className="border border-slate-700">
                             <div className="focus:outline-none px-2 whitespace-nowrap" contentEditable={true} suppressContentEditableWarning={true}>
-                              {shift.shiftTypeId == 370737
+                              {scheduleData.shiftTypeId == 370737
                                 ? "Dagchef"
-                                : "" || shift.shiftTypeId == 370738
+                                : "" || scheduleData.shiftTypeId == 370738
                                 ? "Eftermiddagschef"
-                                : "" || shift.shiftTypeId == 370739
+                                : "" || scheduleData.shiftTypeId == 370739
                                 ? "Kvällschef"
-                                : "" || shift.shiftTypeId == 370740
+                                : "" || scheduleData.shiftTypeId == 370740
                                 ? "Nattchef"
-                                : "" || shift.shiftTypeId == 370757
+                                : "" || scheduleData.shiftTypeId == 370757
                                 ? "Leverans"
-                                : "" || shift.shiftTypeId == 370768
+                                : "" || scheduleData.shiftTypeId == 370768
                                 ? "Serveringsvärd"
-                                : "" || shift.shiftTypeId == 370744
+                                : "" || scheduleData.shiftTypeId == 370744
                                 ? "Upplärning"
-                                : "" || shift.shiftTypeId == 370753
+                                : "" || scheduleData.shiftTypeId == 370753
                                 ? "Inventering"
                                 : ""}
                             </div>
                           </td>
                           <td className="px-1">
                             <div className="focus:outline-none px-2" contentEditable={true} suppressContentEditableWarning={true}>
-                              {shift.breaks.length ? "" : "x"}
+                              {scheduleData.breaks.length ? "" : "x"}
                             </div>
                           </td>
                           <td className="border border-slate-700 min-w-[6em]">
@@ -155,7 +190,7 @@ function Table(props: any) {
               </div>
               <Footer />
             </div>
-            <SalesChart personCount={schedules.length} forecastdata={forecast} />
+            <SalesChart personCount={schedules.length} forecastdata={forecastData} />
           </div>
         </div>
       ) : (
@@ -172,3 +207,14 @@ function Table(props: any) {
   );
 }
 export default Table;
+type shiftinf = {
+  worker: {
+    firstname: string;
+    lastname: string;
+  };
+  begin: string;
+  end: string;
+  status: string;
+  breaks: Array<object>;
+  shiftTypeId: number;
+};
