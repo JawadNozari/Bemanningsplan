@@ -70,19 +70,18 @@ export async function Table(props: any) {
   return (
     <>
       {schedules.length > 0 ? (
-        <div className="flex md:justify-center w-screen md:w-full font_Mulish text-center text-xs print:justify-start">
-          <div className="text-xs text-center font-Mulish ml-12 my-8 print:my-0">
-            <div className="">
+        <div className="flex md:justify-center font_Mulish text-center text-xs print:justify-start">
+          <div className="ml-12 my-8 print:my-0">
+            <div>
               <TableHead date={startdate} />
             </div>
 
             <div className="flex">
-              <div className="flex flex-col justify-center ">
-                <div>
-                  <TableBody schedules={schedules} />
-                </div>
+              <div>
+                <TableBody schedules={schedules} />
                 <Footer />
               </div>
+
               <SalesChart personCount={schedules.length} forecastdata={forecast} />
             </div>
           </div>

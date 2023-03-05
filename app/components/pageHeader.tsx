@@ -35,45 +35,6 @@ export default function TableHead(props: any) {
     window.print();
   };
 
-  const dialog = isPopperOpen && (
-    <>
-      <div
-        className="md:flex md:justify-center md:absolute md:items-center fixed top-0 left-0 bottom-0 right-0 md:h-screen md:w-screen md:top-0 md:left-0 md:right-0 md:bottom-0 z-10 bg-gray-800 bg-opacity-50"
-        onClick={(e) => {
-          if (isPopperOpen && buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
-            setIsPopperOpen(false);
-          }
-        }}
-        onKeyDown={(e) => {
-          if (isPopperOpen && e.key === "Escape") {
-            setIsPopperOpen(false);
-          }
-        }}
-        tabIndex={-1}
-      >
-        <div className="bg-gray-900 text-white rounded-2xl shadow-3xl p-6" onKeyDown={(e) => e.stopPropagation()} ref={buttonRef}>
-          <DayPicker
-            showWeekNumber
-            locale={sv}
-            initialFocus={isPopperOpen}
-            mode="single"
-            defaultMonth={date}
-            selected={date}
-            onSelect={(date) => {
-              setDate(date!);
-              setIsPopperOpen(false);
-            }}
-            modifiersClassNames={{
-              today: "!text-gray-400 !bg-gray-200 !bg-opacity-20",
-              selected: "!bg-red-500 !text-white ",
-              active: "!bg-red-100 !text-gray-500",
-            }}
-            className="bg-gray-900 text-white rounded-2xl shadow-3xl p-6"
-          />
-        </div>
-      </div>
-    </>
-  );
   return (
     <>
       <div>
@@ -103,13 +64,70 @@ export default function TableHead(props: any) {
                         </span>
                       </button>
                     </div>
-                    {dialog}
+                    {isPopperOpen && (
+                      <>
+                        <div
+                          className="fixed top-0 left-0 bottom-0 right-0 md:top-0 md:left-0 md:right-0 md:bottom-0  bg-gray-800 bg-opacity-50 backdrop-blur-sm"
+                          onClick={(e) => {
+                            if (isPopperOpen && buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
+                              setIsPopperOpen(false);
+                            }
+                          }}
+                          onKeyDown={(e) => {
+                            if (isPopperOpen && e.key === "Escape") {
+                              setIsPopperOpen(false);
+                            }
+                          }}
+                          tabIndex={-1}
+                        >
+                          <div className="flex justify-center items-center h-screen">
+                            <div
+                              className="bg-gradient-to-bl from-black to-slate-700 text-white rounded-3xl md:p-6 m-2"
+                              onKeyDown={(e) => e.stopPropagation()}
+                              ref={buttonRef}
+                            >
+                              <DayPicker
+                                showWeekNumber
+                                locale={sv}
+                                initialFocus={isPopperOpen}
+                                mode="single"
+                                defaultMonth={date}
+                                selected={date}
+                                onSelect={(date) => {
+                                  setDate(date!);
+                                  setIsPopperOpen(false);
+                                }}
+                                modifiersClassNames={{
+                                  today: "!text-gray-400 !bg-gray-200 !bg-opacity-20",
+                                  selected: "!bg-red-500 !text-white ",
+                                  active: "!bg-red-100 !text-gray-500",
+                                }}
+                                className="md:p-6 p-2"
+                                footer={
+                                  <div className="flex justify-between items-center pt-4">
+                                    <button
+                                      type="button"
+                                      className="bg-sky-700 text-white rounded-full px-6 py-2"
+                                      onClick={() => {
+                                        setIsPopperOpen(false);
+                                      }}
+                                    >
+                                      Close
+                                    </button>
+                                  </div>
+                                }
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </>
               </div>
 
               <button
-                className="print:hidden flex justify-center items-center bg-sky-800 border border-black text-white rounded-full px-6 py-2 ml-9"
+                className="print:hidden flex justify-center items-center bg-gradient-to-tr from-cyan-700 to-sky-500 text-white rounded-full px-6 py-2 ml-9"
                 onClick={handlePrint}
               >
                 <span role="img" aria-label="calendar icon" className="text-xl">
