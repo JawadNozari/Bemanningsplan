@@ -44,7 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
     .catch((err) => {
       Logger(err);
-      res.status(503).send("Connection to schema.max.se failed. Please try again later. ");
+      res.status(503).send(err);
       return "";
     });
 
