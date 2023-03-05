@@ -153,7 +153,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(200).send(sessionID);
     return;
   } else {
-    //res.status(503).send("Connection to schema.max.se failed. Please try again later. ");
+   
     return;
   }
 }
