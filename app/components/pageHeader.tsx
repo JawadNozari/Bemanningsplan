@@ -28,7 +28,6 @@ export default function TableHead(props: any) {
   function getDate() {
     let d = new Date(date);
     const weekDay = d.toLocaleDateString("sv-SE", { weekday: "long" });
-    console.log(weekDay);
     return `${weekDay.charAt(0).toLocaleUpperCase()}${weekDay.slice(1)} ${d.toLocaleDateString("sv-SE").split("T")[0]}`;
   }
 
@@ -37,41 +36,43 @@ export default function TableHead(props: any) {
   };
 
   const dialog = isPopperOpen && (
-    <div
-      className="flex justify-center items-center absolute z-10 top-0 left-0 right-0 bottom-0 w-screen h-screen bg-gray-800 bg-opacity-50"
-      onClick={(e) => {
-        if (isPopperOpen && buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
-          setIsPopperOpen(false);
-        }
-      }}
-      onKeyDown={(e) => {
-        if (isPopperOpen && e.key === "Escape") {
-          setIsPopperOpen(false);
-        }
-      }}
-      tabIndex={-1}
-    >
-      <div className="bg-gray-900 text-white rounded-2xl shadow-3xl p-6" onKeyDown={(e) => e.stopPropagation()} ref={buttonRef}>
-        <DayPicker
-          showWeekNumber
-          locale={sv}
-          initialFocus={isPopperOpen}
-          mode="single"
-          defaultMonth={date}
-          selected={date}
-          onSelect={(date) => {
-            setDate(date!);
+    <>
+      <div
+        className="md:flex md:justify-center md:absolute md:items-center fixed top-0 left-0 bottom-0 right-0 md:h-screen md:w-screen md:top-0 md:left-0 md:right-0 md:bottom-0 z-10 bg-gray-800 bg-opacity-50"
+        onClick={(e) => {
+          if (isPopperOpen && buttonRef.current && !buttonRef.current.contains(e.target as Node)) {
             setIsPopperOpen(false);
-          }}
-          modifiersClassNames={{
-            today: "!text-gray-400 !bg-gray-200 !bg-opacity-20",
-            selected: "!bg-red-500 !text-white ",
-            active: "!bg-red-100 !text-gray-500",
-          }}
-          className="bg-gray-900 text-white rounded-2xl shadow-3xl p-6"
-        />
+          }
+        }}
+        onKeyDown={(e) => {
+          if (isPopperOpen && e.key === "Escape") {
+            setIsPopperOpen(false);
+          }
+        }}
+        tabIndex={-1}
+      >
+        <div className="bg-gray-900 text-white rounded-2xl shadow-3xl p-6" onKeyDown={(e) => e.stopPropagation()} ref={buttonRef}>
+          <DayPicker
+            showWeekNumber
+            locale={sv}
+            initialFocus={isPopperOpen}
+            mode="single"
+            defaultMonth={date}
+            selected={date}
+            onSelect={(date) => {
+              setDate(date!);
+              setIsPopperOpen(false);
+            }}
+            modifiersClassNames={{
+              today: "!text-gray-400 !bg-gray-200 !bg-opacity-20",
+              selected: "!bg-red-500 !text-white ",
+              active: "!bg-red-100 !text-gray-500",
+            }}
+            className="bg-gray-900 text-white rounded-2xl shadow-3xl p-6"
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
   return (
     <>
@@ -87,7 +88,7 @@ export default function TableHead(props: any) {
               <div className="print:hidden">
                 <>
                   <div>
-                    <div className="flex w-fit p-2 rounded-md bg-gray-200 ">
+                    <div className="flex p-2 rounded-md bg-gray-200 ">
                       <input
                         type="text"
                         placeholder={format(new Date(), "y-MM-dd")}

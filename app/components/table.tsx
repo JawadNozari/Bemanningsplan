@@ -70,11 +70,12 @@ export async function Table(props: any) {
   return (
     <>
       {schedules.length > 0 ? (
-        <div className="flex justify-center font_Mulish text-center text-xs print:justify-start">
+        <div className="flex md:justify-center w-screen md:w-full font_Mulish text-center text-xs print:justify-start">
           <div className="text-xs text-center font-Mulish ml-12 my-8 print:my-0">
-            <div className="block header">
+            <div className="">
               <TableHead date={startdate} />
             </div>
+
             <div className="flex">
               <div className="flex flex-col justify-center ">
                 <div>
